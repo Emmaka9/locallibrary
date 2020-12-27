@@ -1,0 +1,23 @@
+{% extends 'base_generic.html' %}
+{% block title %}
+    LocalLibrary - Home
+{% endblock  %}
+{% load static %}
+{% block content %}
+
+    <h1> Local Library Home</h1>
+    <p>Welcome to Local Library, A Library for Everyone</p>
+    <img src="{% static 'images/img1.jpg' %}" alt="Library" style="width:555px;height:400px">
+    <h2>Dynamic Content</h2>
+    <p>The library has the following record counts:</p>
+    <ul>
+        <li><strong>Books: </strong>{{ num_books }}</li>
+        <li><strong>Copies:<strong> {{ num_instances }}</li>
+        <li><strong>Copies Available:</strong> {{ num_instances_available }} </li>
+        <li><strong>Authors:</strong> {{ num_authors }}</li>
+        <li><strong>Genres:</strong> {{ num_genres }}</li>
+       
+    </ul>
+
+    <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+{% endblock  %}
